@@ -35,6 +35,7 @@ while True:
     print("9. Exit")
     print("10. Search topic ")
     print("11. Tokenizetion")
+    print("12. FAQ")
     choice = input("Enter choice: ")
 
     if choice == "1":
@@ -175,7 +176,28 @@ while True:
     elif choice =="11" :
         with open("knowledge.txt","r") as file:
            for line in file:
-               token=line.split() 
+               token=line.lower().split() 
                print("Tokens:", token)
                print("Token in this line :", len(token))
-               
+    
+    elif choice == "12":
+
+        question = input("Ask Question: ").lower() 
+        words=question.split()
+        ignore = ["what","is","a","the","an"] 
+        keyword =""
+        for word in words:
+           cleanword = word.replace("?","")
+           if cleanword not in ignore:
+              keyword = cleanword
+              break
+       
+        found = False
+        for item in knowledge_list:
+
+            if (keyword.lower() in item.course.lower()
+    or keyword.lower() in item.topic.lower()):
+               print(item.information)
+               found = True
+        if not found:
+            print("Answer Not Found")
