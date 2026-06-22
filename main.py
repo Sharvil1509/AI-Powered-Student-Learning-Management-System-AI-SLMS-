@@ -2,11 +2,24 @@ from students import Students
 from trainers import Trainers
 from courses import Courses
 from enrollment import Enrollment
+from knowledge import Knowledge
+
 
 students = []
 trainers = []
 courses = []
 enrollments = []
+knowledge_list=[]
+
+with open("knowledge.txt","r") as file:
+   for line in file:
+      data = line.strip().split("|")
+      knowledge = Knowledge(
+            data[0],
+            data[1],
+            data[2]
+        )
+      knowledge_list.append(knowledge)
 
 while True:
 
@@ -19,6 +32,7 @@ while True:
     print("7. View Courses")
     print("8. Save Data")
     print("9. Exit")
+    print("10. Search topic ")
 
     choice = input("Enter choice: ")
 
@@ -139,6 +153,21 @@ while True:
                        f"{enrollment.course.course_id},"
                        f"{enrollment.progress_percentage}\n"
                 )
+            
+        
+    
+    elif choice == "9":
+       break
 
-               print("All data saved successfully!")
-              
+
+    elif choice == "10":
+       search = input("Enter Topic: ").strip().lower()
+       found = False
+       for item in knowledge_list:
+          if search.lower() in item.topic.lower():
+             item.display_topicinfo() 
+             found = True
+
+       if not found:
+          print("Topic not found")               
+

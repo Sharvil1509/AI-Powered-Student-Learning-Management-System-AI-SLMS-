@@ -1,0 +1,5 @@
+Python OOP|Inheritance|Inheritance allows one class to inherit properties from another class.
+Python OOP|Polymorphism|Polymorphism allows one interface to have many forms.
+Python OOP|Encapsulation|Encapsulation hides data and provides controlled access.
+File Handling|Read Mode|Read mode is used to read data from a file.
+File Handling|Write Mode|Write mode is used to write data to a file.
