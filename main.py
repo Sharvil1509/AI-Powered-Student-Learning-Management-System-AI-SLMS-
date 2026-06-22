@@ -21,6 +21,7 @@ with open("knowledge.txt","r") as file:
         )
       knowledge_list.append(knowledge)
 
+
 while True:
 
     print("\n1. Add Student")
@@ -33,7 +34,7 @@ while True:
     print("8. Save Data")
     print("9. Exit")
     print("10. Search topic ")
-
+    print("11. Tokenizetion")
     choice = input("Enter choice: ")
 
     if choice == "1":
@@ -171,3 +172,10 @@ while True:
        if not found:
           print("Topic not found")               
 
+    elif choice =="11" :
+        with open("knowledge.txt","r") as file:
+           for line in file:
+               token=line.split() 
+               print("Tokens:", token)
+               print("Token in this line :", len(token))
+               
