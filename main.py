@@ -36,6 +36,7 @@ while True:
     print("10. Search topic ")
     print("11. Tokenizetion")
     print("12. FAQ")
+    print("13. Text Prediction")
     choice = input("Enter choice: ")
 
     if choice == "1":
@@ -201,3 +202,16 @@ while True:
                found = True
         if not found:
             print("Answer Not Found")
+
+
+    elif choice == "13":
+       userip = input("Enter the incomplete sentance :")
+       predictions = []
+       with open("traindata.txt","r") as file:
+          for sentance in file:
+             sentance = sentance.strip()
+             if sentance.lower().startswith(userip):
+                word = sentance.split()
+                predictions.append(word[-1])
+
+          print(predictions)      

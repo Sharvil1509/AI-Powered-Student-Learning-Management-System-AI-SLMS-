@@ -1,0 +1,20 @@
+I love Python
+I love AI
+I love coding
+Python is easy
+Python is powerful
+Python supports OOP
+OOP uses classes
+OOP uses objects
+File handling stores data
+File handling reads files
+File handling writes files
+Inheritance allows reuse
+Inheritance is an OOP concept
+Polymorphism provides flexibility
+Encapsulation hides data
+Students learn Python
+Students complete courses
+Students track progress
+AI helps students
+AI improves learning
