@@ -11,7 +11,7 @@ courses = []
 enrollments = []
 knowledge_list=[]
 
-with open("knowledge.txt","r") as file:
+with open("data/knowledge.txt","r") as file:
    for line in file:
       data = line.strip().split("|")
       knowledge = Knowledge(
@@ -21,19 +21,19 @@ with open("knowledge.txt","r") as file:
         )
       knowledge_list.append(knowledge)
 
-with open("students.txt","r") as file:
+with open("data/students.txt","r") as file:
    for line in file :
       data = line.strip().split(",")
       student = Students(int(data[0]),data[1],data[2],data[3])
       students.append(student)
 
-with open("trainers.txt","r") as file:
+with open("data/trainers.txt","r") as file:
    for line in file:
       data=line.strip().split(",")
       trainer=Trainers(int(data[0]),data[1],data[2],data[3])
       trainers.append(trainer)
 
-with open("courses.txt","r") as file:
+with open("data/courses.txt","r") as file:
    for line in file:
       data=line.strip().split(",")
       course=Courses(int(data[0]),data[1],data[2],data[3])
@@ -141,7 +141,7 @@ while True:
        else:
 
        
-           with open("students.txt", "w") as file:
+           with open("data/students.txt", "w") as file:
 
                for student in students:
 
@@ -152,7 +152,7 @@ while True:
                        f"{student.grade}\n"
                 )
 
-           with open("trainers.txt", "w") as file:
+           with open("data/trainers.txt", "w") as file:
 
                for trainer in trainers:
 
@@ -164,7 +164,7 @@ while True:
                 )
 
      
-           with open("courses.txt", "w") as file:
+           with open("data/courses.txt", "w") as file:
 
                for course in courses:
 
@@ -176,7 +176,7 @@ while True:
                 )
 
       
-           with open("enrollments.txt", "w") as file:
+           with open("data/enrollments.txt", "w") as file:
 
                for enrollment in enrollments:
 
@@ -204,7 +204,7 @@ while True:
           print("Topic not found")               
 
     elif choice =="11" :
-        with open("knowledge.txt","r") as file:
+        with open("data/knowledge.txt","r") as file:
            for line in file:
                token=line.lower().split() 
                print("Tokens:", token)
@@ -236,7 +236,7 @@ while True:
     elif choice == "13":
        userip = input("Enter the incomplete sentance :")
        predictions = []
-       with open("traindata.txt","r") as file:
+       with open("data/traindata.txt","r") as file:
           for sentance in file:
              sentance = sentance.strip()
              if sentance.lower().startswith(userip):
