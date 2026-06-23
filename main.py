@@ -21,6 +21,25 @@ with open("knowledge.txt","r") as file:
         )
       knowledge_list.append(knowledge)
 
+with open("students.txt","r") as file:
+   for line in file :
+      data = line.strip().split(",")
+      student = Students(int(data[0]),data[1],data[2],data[3])
+      students.append(student)
+
+with open("trainers.txt","r") as file:
+   for line in file:
+      data=line.strip().split(",")
+      trainer=Trainers(int(data[0]),data[1],data[2],data[3])
+      trainers.append(trainer)
+
+with open("courses.txt","r") as file:
+   for line in file:
+      data=line.strip().split(",")
+      course=Courses(int(data[0]),data[1],data[2],data[3])
+      courses.append(course)
+
+
 
 while True:
 
@@ -37,6 +56,7 @@ while True:
     print("11. Tokenizetion")
     print("12. FAQ")
     print("13. Text Prediction")
+    
     choice = input("Enter choice: ")
 
     if choice == "1":
@@ -65,12 +85,20 @@ while True:
        course_id = int(input("Enter your Course Id :"))
        course_name = input("Enter Your Course Name :")
        duration = input("Enter Your Course Duration :")
-       trainer = trainers[0]
-
-       course = Courses(course_id,course_name,duration,trainer)   
-       courses.append(course) 
-       print("Course Added Successfully") 
-
+       for trainer in trainers:
+           print(trainer.id, trainer.name)
+           trainer_id = int(input("Enter Trainer ID: "))
+           trainer_found=None
+           for trainer in trainers:
+              if trainer.id ==trainer_id:
+                 trainer_found=trainer
+                 break
+       if trainer_found:
+          course = Courses(course_id,course_name,duration,trainer_found)   
+          courses.append(course) 
+          print("Course Added Successfully") 
+       else:
+          print("trainer not found")
 
     elif choice == "4":
 
@@ -143,7 +171,8 @@ while True:
                    file.write(
                        f"{course.course_id},"
                        f"{course.course_name},"
-                       f"{course.duration}\n"
+                       f"{course.duration},"
+                       f"{course.trainer.id}\n"
                 )
 
       
@@ -214,4 +243,5 @@ while True:
                 word = sentance.split()
                 predictions.append(word[-1])
 
-          print(predictions)      
+          print(predictions)  
+

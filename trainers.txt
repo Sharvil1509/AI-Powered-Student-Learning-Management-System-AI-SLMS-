@@ -1,1 +1,2 @@
-1,mahendra sir,leapot@321,ai tech
+101,John,john@gmail.com,Python
+102,Sarah,sarah@gmail.com,AI
