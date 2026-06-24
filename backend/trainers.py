@@ -1,4 +1,4 @@
-from students import Person
+from backend.students import Person
 
 class Trainers(Person) :
     def __init__(self,id,name,email,specialization):

@@ -1,8 +1,8 @@
-from students import Students
-from trainers import Trainers
-from courses import Courses
-from enrollment import Enrollment
-from knowledge import Knowledge
+from backend.students import Students
+from backend.trainers import Trainers
+from backend.courses import Courses
+from backend.enrollment import Enrollment
+from backend.knowledge import Knowledge
 
 
 students = []
@@ -172,7 +172,7 @@ while True:
                        f"{course.course_id},"
                        f"{course.course_name},"
                        f"{course.duration},"
-                       f"{course.trainer.id}\n"
+                       f"{course.trainer if isinstance(course.trainer, str) else course.trainer.id}\n"
                 )
 
       
