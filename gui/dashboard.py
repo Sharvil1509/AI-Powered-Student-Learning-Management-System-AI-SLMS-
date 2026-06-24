@@ -1,6 +1,7 @@
 import customtkinter as ctk 
 from gui.students_page import open_students_page
 from .trainers_page import open_trainers_page
+from .courses_page import open_courses_page
 
 app= ctk.CTk()
 app.title("AI-SLMS Dashboard")
@@ -15,7 +16,7 @@ button1=ctk.CTkButton(frame2,text="Students Page",command=open_students_page)
 button1.grid(row=0,column=0,padx=10,pady=5)
 button2=ctk.CTkButton(frame2,text="Trainers Page",command=open_trainers_page)
 button2.grid(row=0,column=1,padx=10,pady=5)
-button3=ctk.CTkButton(frame2,text="Courses Page")
+button3=ctk.CTkButton(frame2,text="Courses Page",command=open_courses_page)
 button3.grid(row=1,column=0,padx=10,pady=5)
 button4=ctk.CTkButton(frame2,text="Knowledge Page")
 button4.grid(row=1,column=1,padx=10,pady=5)
