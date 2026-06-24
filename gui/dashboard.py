@@ -5,6 +5,8 @@ from .courses_page import open_courses_page
 from .knowledge_page import open_knowledge_page
 from .faq_page import open_faq_page
 from .prediction_page import open_prediction_page
+from .enrollment_page import open_enrollment_page
+from .progress_page import open_progress_page
 
 app= ctk.CTk()
 app.title("AI-SLMS Dashboard")
@@ -27,7 +29,9 @@ button5=ctk.CTkButton(frame2,text="FAQ Page",command=open_faq_page)
 button5.grid(row=2,column=0,padx=10,pady=5)
 button6=ctk.CTkButton(frame2,text="Prediction Page",command=open_prediction_page)
 button6.grid(row=2,column=1,padx=10,pady=5)
-
-
+button7=ctk.CTkButton(frame2,text="Enrollment Page",command=open_enrollment_page)
+button7.grid(row=3,column=0,padx=10,pady=5)
+button8=ctk.CTkButton(frame2,text="Progress Page",command=open_progress_page)
+button8.grid(row=3,column=1,padx=10,pady=5)
 
 app.mainloop()
